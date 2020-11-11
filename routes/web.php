@@ -18,4 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/clientes', 'ClienteController@index')->name('cliente.index');
+Route::get('/cliente/novo', 'ClienteController@create');
+Route::post('/clientes/novo', 'ClienteController@store')->name('novo-cliente');
 
