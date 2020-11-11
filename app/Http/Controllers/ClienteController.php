@@ -26,4 +26,17 @@ class ClienteController extends Controller
         return redirect()->route('cliente.index');
     }
 
+    public function show($id){ 
+        $cliente = Cliente::findOrFail($id);
+        return $cliente;
+        return view('cliente.show', ['cliente' => $cliente]);
+    }
+
+    public function edit(Request $request,Cliente $cliente){
+        $cliente->update([
+            'nome' => $request->nome,
+            'cpfCnpj' => $request->cpfCnpj
+        ]);
+        return "Cliente atualizado com sucesso!";
+    }
 }

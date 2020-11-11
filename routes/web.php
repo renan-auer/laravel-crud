@@ -20,4 +20,6 @@ Route::get('/', function () {
 Route::get('/clientes', 'ClienteController@index')->name('cliente.index');
 Route::get('/cliente/novo', 'ClienteController@create');
 Route::post('/clientes/novo', 'ClienteController@store')->name('novo-cliente');
+Route::get('/cliente/{id}', 'ClienteController@show');
+Route::put('/cliente/editar/{cliente}', 'ClienteController@edit')->name('alterar-cliente');
 
